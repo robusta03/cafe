@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="peach">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Cafe Cozy & Co. - คาเฟ่ส่วนตัวสุดน่ารัก</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Prompt', 'sans-serif'],
+                        cute: ['Fredoka', 'Prompt', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+:root{--bg-main:#FFE8E3;--bg-card:#FFFFFF;--text-main:#3B2A2F;--muted:#6B565B;--primary:#FF7A93;--on-primary:#3B2A2F;--secondary:#FFD166;--soft:#FFF3F0;--line:#F3CFC8;--outline:#3B2A2F;--badge-bg:#FFE3A3;--badge-text:#3B2A2F;--slider-accent:#FF7A93;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+[data-theme="matcha"]{--bg-main:#E3F1E0;--text-main:#1F3A2A;--muted:#4A6354;--primary:#7CC78B;--on-primary:#1F3A2A;--secondary:#F3E58A;--soft:#F1F8EF;--line:#C5DEC3;--outline:#1F3A2A;--badge-bg:#F3E58A;--badge-text:#1F3A2A;--slider-accent:#7CC78B}
+[data-theme="taro"]{--bg-main:#EEE6FA;--text-main:#34224F;--muted:#5E4E78;--primary:#B794F6;--on-primary:#34224F;--secondary:#FFD6E8;--soft:#F7F2FD;--line:#D9CBF0;--outline:#34224F;--badge-bg:#FFD6E8;--badge-text:#34224F;--slider-accent:#B794F6}
+[data-theme="dark"]{--bg-main:#17151C;--bg-card:#221F29;--text-main:#F4EEF6;--muted:#B9B0C4;--primary:#FF8FA8;--on-primary:#2A1A20;--secondary:#FFD166;--soft:#2D2A36;--line:#3A3644;--outline:#6B6280;--badge-bg:#3A3040;--badge-text:#FFD6E0;--slider-accent:#FF8FA8}
+body{background-color:var(--bg-main);background-image:radial-gradient(var(--line) 1.5px,transparent 1.5px);background-size:24px 24px;color:var(--text-main);transition:background-color .3s,color .3s}
+header{background:var(--bg-card)!important;border-bottom:2px solid var(--outline)!important;top:env(safe-area-inset-top,0px)!important}
+header h1{font-size:1.2rem}
+header button[title]{border:2px solid var(--outline)!important}
+.dynamic-card{background:var(--bg-card)!important;background-image:none!important;border:2px solid var(--outline);border-radius:1.75rem;box-shadow:4px 4px 0 var(--outline);transition:background-color .3s}
+#preview-card{box-shadow:8px 8px 0 var(--primary)}
+[class*="bg-stone-"],[class*="dark:bg-zinc"]{background-color:var(--soft)!important}
+[class*="border-stone-"],[class*="dark:border-zinc"]{border-color:var(--line)!important}
+[class*="text-stone-"]{color:var(--muted)!important}
+.text-white{color:var(--on-primary)!important}
+#menuSelectDropdown{border-color:var(--outline)!important;color:var(--text-main);font-weight:500}
+.badge-custom{background:var(--badge-bg);color:var(--badge-text);border:1.5px solid var(--outline)}
+h2,h3{letter-spacing:-.01em}
+.tab{border:2px solid var(--outline);background:var(--bg-card);color:var(--text-main);border-radius:1rem;box-shadow:0 4px 0 var(--outline);transition:transform .12s,box-shadow .12s}
+.tab:active{transform:translateY(3px);box-shadow:0 1px 0 var(--outline)}
+.tab-on{background:var(--primary);color:var(--on-primary)}
+button.w-full{border:2px solid var(--outline);box-shadow:0 4px 0 var(--outline)}
+button.w-full:active{transform:translateY(3px);box-shadow:0 1px 0 var(--outline)}
+input[type=range]{-webkit-appearance:none;appearance:none;height:14px;border-radius:99px;border:2px solid var(--outline);background:linear-gradient(90deg,var(--primary) var(--pct,50%),var(--soft) var(--pct,50%))!important}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--bg-card);border:3px solid var(--outline);box-shadow:0 3px 0 var(--outline);cursor:grab}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--bg-card);border:3px solid var(--outline);box-shadow:0 3px 0 var(--outline);cursor:grab}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--text-main);outline-offset:3px}
+.fa-solid{font-style:normal;display:inline-block;line-height:1}
+.fa-mug-hot::before{content:"☕"}.fa-list-ul::before{content:"📋"}.fa-sliders::before{content:"🎚️"}.fa-droplet::before{content:"💧"}.fa-cow::before{content:"🥛"}.fa-seedling::before{content:"🌱"}.fa-cube::before{content:"🍯"}.fa-book-open-reader::before{content:"📖"}.fa-xmark::before{content:"✕"}.fa-check::before{content:"✓"}.fa-glass-water::before{content:"🥤"}.fa-blender::before{content:"🍹"}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-6px) rotate(3deg)}}
+.animate-float{animation:float 4s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.animate-float{animation:none}.tab,button.w-full{transition:none}}
+.cup-svg{overflow:visible}.cup-pop{animation:pop .4s ease-out}
+.cb{transform-box:fill-box;transform-origin:50% 100%;animation:bob 3.2s ease-in-out infinite}.cb.buzz{animation:buzz .18s linear infinite}
+.eye{transform-box:fill-box;transform-origin:center;animation:blink 4.5s infinite}
+.steam{animation:rise 2.4s ease-in infinite}.bub{animation:rise 3s ease-in infinite}
+.ice{transform-box:fill-box;transform-origin:center;animation:bobi 2.6s ease-in-out infinite}
+.wig{transform-box:fill-box;transform-origin:50% 100%;animation:wig 1.6s ease-in-out infinite}
+.spk{transform-box:fill-box;transform-origin:center;animation:twinkle 1.8s ease-in-out infinite}
+.spin-once{animation:spinr .5s}
+@keyframes pop{0%{transform:scale(.92,1.08)}60%{transform:scale(1.06,.94)}100%{transform:scale(1)}}
+@keyframes bob{0%,100%{transform:scale(1)}50%{transform:scale(1.03,.97)}}
+@keyframes buzz{0%,100%{transform:translateX(-1.5px)}50%{transform:translateX(1.5px)}}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+@keyframes rise{0%{transform:translateY(8px);opacity:0}30%{opacity:.8}100%{transform:translateY(-22px);opacity:0}}
+@keyframes bobi{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-4px) rotate(10deg)}}
+@keyframes wig{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+@keyframes twinkle{0%,100%{transform:scale(.6);opacity:.4}50%{transform:scale(1.1);opacity:1}}
+@keyframes spinr{to{transform:rotate(-360deg)}}
+@media (prefers-reduced-motion:reduce){.cup-pop,.cb,.eye,.steam,.bub,.ice,.wig,.spk,.spin-once{animation:none}}
+</style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col selection:bg-pink-200">
+
+    <header class="w-full bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border-b border-stone-200 dark:border-zinc-800 sticky top-0 z-50 px-4 py-3">
+        <div class="max-w-5xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full flex items-center justify-center text-white text-xl shadow-sm" style="background-color: var(--primary);">
+                    <i class="fa-solid fa-mug-hot"></i>
+                </div>
+                <div>
+                    <h1 class="font-cute font-bold text-lg tracking-wide" style="color: var(--text-main);">Cafe Cozy & Co. ☕️</h1>
+                    <p class="text-xs text-stone-400">Interactive Beverage Calculator & Guide</p>
+                </div>
+            </div>
+
+            <!-- Theme Switcher -->
+            <div class="flex items-center space-x-2">
+                <div class="flex items-center space-x-1.5 bg-stone-100 dark:bg-zinc-800 p-1 rounded-full border border-stone-200 dark:border-zinc-700">
+                    <button onclick="setTheme('peach')" title="Soft Peach" class="w-6 h-6 rounded-full bg-[#E07A5F] hover:scale-110 transition-transform"></button>
+                    <button onclick="setTheme('matcha')" title="Mint Matcha" class="w-6 h-6 rounded-full bg-[#588157] hover:scale-110 transition-transform"></button>
+                    <button onclick="setTheme('taro')" title="Lavender Taro" class="w-6 h-6 rounded-full bg-[#9B5DE5] hover:scale-110 transition-transform"></button>
+                    <button onclick="setTheme('dark')" title="Dark Mode" class="w-6 h-6 rounded-full bg-[#1A1A1E] border border-stone-500 hover:scale-110 transition-transform"></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1 max-w-5xl w-full mx-auto p-4 md:p-6 space-y-6">
+    <div class="grid grid-cols-2 gap-2.5 max-w-md" role="tablist">
+        <button id="tabbtn-calc" role="tab" onclick="showView('calc')" class="tab tab-on py-2.5 font-cute font-semibold text-sm">🧮 คำนวณสูตร</button>
+        <button id="tabbtn-saved" role="tab" onclick="showView('saved')" class="tab py-2.5 font-cute font-semibold text-sm">💾 สูตรที่บันทึกไว้ (<span id="saved-count">0</span>)</button>
+    </div>
+    <div id="view-calc" class="space-y-6">
+
+        <section class="dynamic-card p-5 md:p-6 relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 w-40 h-40 rounded-full opacity-20 pointer-events-none" style="background-color: var(--primary);"></div>
+            
+            <h2 class="font-cute text-2xl md:text-3xl font-bold mb-2">เลือกหมวดหมู่และเมนูคาเฟ่ ☕️</h2>
+            <p class="text-xs md:text-sm text-stone-500 dark:text-stone-400 mb-4">เลือกหมวดหมู่เครื่องดื่มและเลือกเมนูย่อยเพื่อโหลดสัดส่วนสูตรอร่อยยอดฮิตได้ทันที!</p>
+            
+            <!-- Main Category Tabs (5 Categories) -->
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5 mb-4" id="categoryTabsContainer"></div>
+
+            <!-- Menu Selector Dropdown -->
+            <div class="space-y-1.5">
+                <label class="text-xs font-bold text-stone-500 dark:text-stone-400 flex items-center">
+                    <i class="fa-solid fa-list-ul mr-1.5 text-amber-500"></i> เลือกเมนูย่อย:
+                </label>
+                <select id="menuSelectDropdown" onchange="onMenuSelectChange()" class="w-full bg-stone-50 dark:bg-zinc-800 border-2 border-stone-200 dark:border-zinc-700 rounded-2xl px-4 py-3 font-cute text-sm outline-none cursor-pointer focus:border-[var(--primary)] transition-colors"></select>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+            
+            <!-- Sliders Panel -->
+            <section class="md:col-span-7 dynamic-card p-5 md:p-6 space-y-5">
+                <div class="flex items-center justify-between border-b border-stone-100 dark:border-zinc-800 pb-3">
+                    <h3 class="font-cute text-lg font-bold flex items-center">
+                        <i class="fa-solid fa-sliders mr-2" style="color: var(--primary);"></i> ปรับแต่งสัดส่วนวัตถุดิบ
+                    </h3>
+                    <span id="active-menu-badge" class="badge-custom text-xs px-3 py-1 rounded-full font-semibold">อเมริกาโน่</span>
+                </div>
+
+                <!-- Water / Soda Slider -->
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-sm">
+                        <label id="label-water" class="font-medium text-stone-700 dark:text-stone-300 flex items-center">
+                            <i class="fa-solid fa-droplet text-blue-400 mr-2 w-5"></i> ปริมาณน้ำเปล่า / โซดา
+                        </label>
+                        <span id="val-water" class="font-cute font-bold badge-custom px-2.5 py-0.5 rounded-full text-xs">150 มล.</span>
+                    </div>
+                    <input id="slide-water" type="range" min="0" max="250" step="10" value="150" 
+                           class="w-full h-2.5 bg-stone-200 dark:bg-zinc-700 rounded-lg appearance-none cursor-pointer" oninput="onSliderInput()">
+                </div>
+
+                <!-- Milk / Creamer Slider -->
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-sm">
+                        <label id="label-milk" class="font-medium text-stone-700 dark:text-stone-300 flex items-center">
+                            <i class="fa-solid fa-cow text-amber-500 mr-2 w-5"></i> ปริมาณนมสด / นมข้นจืด
+                        </label>
+                        <span id="val-milk" class="font-cute font-bold badge-custom px-2.5 py-0.5 rounded-full text-xs">0 มล.</span>
+                    </div>
+                    <input id="slide-milk" type="range" min="0" max="250" step="10" value="0" 
+                           class="w-full h-2.5 bg-stone-200 dark:bg-zinc-700 rounded-lg appearance-none cursor-pointer" oninput="onSliderInput()">
+                </div>
+
+                <!-- Main Ingredient Slider (Coffee / Tea / Powder / Fruit) -->
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-sm">
+                        <label id="label-main" class="font-medium text-stone-700 dark:text-stone-300 flex items-center">
+                            <i class="fa-solid fa-seedling text-emerald-600 mr-2 w-5"></i> กาแฟ / ชา / ผงโกโก้ / ผลไม้
+                        </label>
+                        <span id="val-main" class="font-cute font-bold badge-custom px-2.5 py-0.5 rounded-full text-xs">30 กรัม</span>
+                    </div>
+                    <input id="slide-main" type="range" min="0" max="150" step="5" value="30" 
+                           class="w-full h-2.5 bg-stone-200 dark:bg-zinc-700 rounded-lg appearance-none cursor-pointer" oninput="onSliderInput()">
+                </div>
+
+                <!-- Sweetness Slider -->
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center text-sm">
+                        <label class="font-medium text-stone-700 dark:text-stone-300 flex items-center">
+                            <i class="fa-solid fa-cube text-pink-400 mr-2 w-5"></i> ความหวาน (ไซรัป / นมข้นหวาน)
+                        </label>
+                        <span id="val-sweet" class="font-cute font-bold badge-custom px-2.5 py-0.5 rounded-full text-xs">15 มล.</span>
+                    </div>
+                    <input id="slide-sweet" type="range" min="0" max="100" step="5" value="15" 
+                           class="w-full h-2.5 bg-stone-200 dark:bg-zinc-700 rounded-lg appearance-none cursor-pointer" oninput="onSliderInput()">
+                </div>
+                <div class="pt-3 border-t border-stone-100 space-y-3">
+                    <p id="orig-line" class="text-xs font-medium"></p>
+                    <div class="flex flex-wrap gap-2">
+                        <button id="btn-reset" onclick="resetRecipe()" class="tab px-4 py-2.5 font-cute font-semibold text-sm"><span id="reset-ico" class="inline-block">↺</span> รีเซ็ตเป็นค่าเดิม</button>
+                        <input id="save-name" maxlength="40" placeholder="ตั้งชื่อสูตร (ไม่บังคับ)" class="flex-1 min-w-[9rem] rounded-2xl px-4 py-2.5 text-sm bg-stone-50 border-2" style="border-color:var(--outline);color:var(--text-main)">
+                        <button onclick="saveCurrent()" class="tab tab-on px-4 py-2.5 font-cute font-semibold text-sm">💾 บันทึกสูตร</button>
+                    </div>
+                    <p id="save-msg" class="text-xs font-semibold" aria-live="polite"></p>
+                </div>
+            </section>
+
+            <!-- Live Preview Card with Smart Warning & SVG -->
+            <section id="preview-card" class="md:col-span-5 dynamic-card p-5 md:p-6 flex flex-col justify-between relative overflow-hidden bg-gradient-to-br from-white to-stone-50 dark:from-zinc-900 dark:to-zinc-800">
+                <div class="absolute -top-10 -right-10 w-32 h-32 rounded-full opacity-10 pointer-events-none" style="background-color: var(--primary);"></div>
+                
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span id="drink-type-badge" class="text-xs uppercase tracking-wider font-bold badge-custom px-3 py-1 rounded-full">✨ เมนูเย็น</span>
+                        <div id="drink-icon-box" class="w-10 h-10 rounded-xl flex items-center justify-center text-white text-lg shadow-md animate-float" style="background-color: var(--primary);">
+                            <i class="fa-solid fa-mug-hot"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- SVG Interactive Illustration (Hot, Cold, Frappe) -->
+                    <div id="svg-illustration-container" class="w-full h-60 flex items-center justify-center mb-3 bg-stone-100 dark:bg-zinc-800/60 rounded-2xl border border-stone-200 dark:border-zinc-700 overflow-hidden relative"></div>
+
+                    <!-- Smart Health & Taste Warnings -->
+                    <div id="warning-box" class="bg-amber-50 dark:bg-amber-950/40 border-l-4 border-amber-400 p-2.5 rounded-xl text-xs text-amber-800 dark:text-amber-200 mb-3 font-medium hidden"></div>
+
+                    <h3 id="display-drink-name" class="font-cute text-3xl font-bold mb-1">อเมริกาโน่เย็น</h3>
+                    <p id="display-drink-desc" class="text-xs text-stone-500 dark:text-stone-400 mb-3 leading-relaxed">กาแฟดำเข้มข้น สดชื่นกระปรี้กระเปร่า</p>
+
+                    <!-- Breakdown List -->
+                    <div class="bg-stone-50 dark:bg-zinc-800/80 rounded-2xl p-3 space-y-1.5 mb-3 border border-stone-200/60 dark:border-zinc-700/60">
+                        <div class="text-xs font-bold text-stone-600 dark:text-stone-300 mb-1">📊 สัดส่วนวัตถุดิบจริง:</div>
+                        <ul id="ingredient-breakdown-list" class="space-y-1 text-xs text-stone-600 dark:text-stone-300 font-medium"></ul>
+                    </div>
+                </div>
+
+                <button onclick="openGuideModal()" class="w-full py-3 px-4 text-white font-cute font-medium rounded-2xl shadow-md transition-all duration-300 flex items-center justify-center space-x-2 hover:opacity-90" style="background-color: var(--primary);">
+                    <i class="fa-solid fa-book-open-reader"></i>
+                    <span>ดูวิธีทำอย่างละเอียด Step-by-Step</span>
+                </button>
+            </section>
+        </div>
+    </div>
+    <div id="view-saved" class="hidden space-y-4"><div id="saved-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div></div>
+    </main>
+
+    <div id="guide-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="dynamic-card max-w-lg w-full max-h-[90vh] overflow-y-auto p-6 relative space-y-5 bg-white dark:bg-zinc-900">
+            <button onclick="closeGuideModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300 flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="flex items-center space-x-3 border-b border-stone-100 dark:border-zinc-800 pb-4">
+                <div id="modal-icon" class="w-12 h-12 rounded-2xl text-white flex items-center justify-center text-2xl shadow-sm" style="background-color: var(--primary);">
+                    <i class="fa-solid fa-mug-hot"></i>
+                </div>
+                <div>
+                    <h3 id="modal-title" class="font-cute text-xl font-bold">วิธีทำเมนูนี้</h3>
+                    <p class="text-xs text-stone-400">ทำตามขั้นตอนง่ายๆ ได้เครื่องดื่มแสนอร่อยแน่นอนค่ะ</p>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-stone-50 dark:bg-zinc-800 rounded-2xl p-3.5 border border-stone-200 dark:border-zinc-700">
+                    <span class="text-xs font-bold block mb-1" style="color: var(--primary);">📌 สัดส่วนที่คุณตั้งค่าไว้:</span>
+                    <p id="modal-summary-proportions" class="text-xs font-medium text-stone-700 dark:text-stone-200"></p>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="font-cute font-bold text-sm">📝 ขั้นตอนการทำทีละสเต็ป:</h4>
+                    <ol id="modal-steps" class="space-y-2.5 text-xs md:text-sm text-stone-600 dark:text-stone-300"></ol>
+                </div>
+            </div>
+
+            <button onclick="closeGuideModal()" class="w-full py-3 text-white font-cute font-medium rounded-2xl shadow-md hover:opacity-90" style="background-color: var(--primary);">
+                เข้าใจแล้วจ้า! ลุยกันเลย ☕️
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const categoriesData = {
+            coffee: {
+                title: "☕ กาแฟ",
+                mainLabel: "☕ กาแฟ/ช็อตเอสเพรสโซ่ (ml/g)",
+                items: [
+                    { id: "am_hot", name: "อเมริกาโน่ร้อน", type: "hot", color: "#2d1300", desc: "กาแฟดำร้อนหอมกรุ่น เข้มข้นตื่นตัว", recipe: { water: 120, milk: 0, main: 30, sweet: 0 }, steps: ["สกัดช็อตเอสเพรสโซ่ 30 มล.", "เติมน้ำร้อน 120 มล. ลงในแก้วมัค", "คนให้เข้ากันพร้อมเสิร์ฟความร้อนหอมกรุ่น"] },
+                    { id: "am_cold", name: "อเมริกาโน่เย็น", type: "cold", color: "#3e1f00", desc: "กาแฟดำเย็นสดชื่น ดับกระหาย", recipe: { water: 150, milk: 0, main: 60, sweet: 15 }, steps: ["สกัดดับเบิ้ลช็อตเอสเพรสโซ่ 60 มล.", "ผสมน้ำเปล่า 150 มล. และไซรัปความหวานตามชอบ", "เทใส่น้ำแข็งเต็มแก้วพร้อมดื่ม"] },
+                    { id: "am_lemon", name: "อเมริกาโน่มะนาว", type: "cold", color: "#542a00", desc: "กาแฟดำผสานความเปรี้ยวซ่ามะนาวสด", recipe: { water: 100, milk: 0, main: 60, sweet: 30 }, steps: ["คั้นน้ำมะนาวสดผสมไซรัปในแก้ว", "เติมน้ำแข็งและโซดาหรือน้ำเปล่า 100 มล.", "ราดช็อตเอสเพรสโซ่ทับด้านบนให้เกิดเลเยอร์"] },
+                    { id: "es_hot", name: "เอสเพรสโซ่ร้อน", type: "hot", color: "#1a0b00", desc: "ช็อตเอสเพรสโซ่เข้มข้นแท้ๆ", recipe: { water: 0, milk: 0, main: 30, sweet: 0 }, steps: ["วอร์มแก้วเอสเพรสโซ่ให้ร้อน", "สกัดกาแฟ 30 มล. ออกมาให้ได้ครีม่าสีทองสวยงาม"] },
+                    { id: "es_cold", name: "เอสเพรสโซ่เย็น (ไทย)", type: "cold", color: "#8b5a2b", desc: "เอสเพรสโซ่เย็นสูตรไทย นมข้นหวานมันสะใจ", recipe: { water: 0, milk: 90, main: 60, sweet: 45 }, steps: ["ผสมนมข้นหวานและนมข้นจืดในแก้ว", "เทช็อตกาแฟเข้มข้น 60 มล. คนให้เข้ากัน", "เทใส่น้ำแข็งล้นแก้ว"] },
+                    { id: "cap_hot", name: "คาปูชิโน่ร้อน", type: "hot", color: "#c49a6c", desc: "กาแฟนมพร้อมฟองนุ่มละมุนด้านบน", recipe: { water: 0, milk: 120, main: 30, sweet: 0 }, steps: ["สตรีมนมสดให้เกิดฟองหนานุ่ม", "เทนมและฟองนมราดลงบนช็อตกาแฟ"] },
+                    { id: "cap_cold", name: "คาปูชิโน่เย็น", type: "cold", color: "#c49a6c", desc: "คาปูชิโน่เย็นโรยผงซินินามอนหอมๆ", recipe: { water: 0, milk: 120, main: 60, sweet: 20 }, steps: ["เติมนมสดและไซรัปคนให้เข้ากัน", "เทใส่น้ำแข็งแล้วราดช็อตกาแฟด้านบน โรยฟองนม"] },
+                    { id: "lat_hot", name: "ลาเต้ร้อน", type: "hot", color: "#d2b48c", desc: "กาแฟนมรสชาตินุ่มนวล กลมกล่อม", recipe: { water: 0, milk: 150, main: 30, sweet: 0 }, steps: ["สตรีมนมเนียนนุ่มเทผสมช็อตเอสเพรสโซ่"] },
+                    { id: "lat_cold", name: "ลาเต้เย็น", type: "cold", color: "#d2b48c", desc: "คาเฟ่ลาเต้เย็นยอดฮิต ดื่มง่าย", recipe: { water: 0, milk: 150, main: 60, sweet: 15 }, steps: ["เติมนมสดและไซรัปลงในแก้วน้ำแข็ง", "เทช็อตกาแฟราดด้านบนให้เกิดชั้นสวยงาม"] },
+                    { id: "moc_hot", name: "มอคค่าร้อน", type: "hot", color: "#5c4033", desc: "กาแฟผสมช็อกโกแลตหอมหวานอบอุ่น", recipe: { water: 0, milk: 120, main: 30, sweet: 15 }, steps: ["ละลายซอสช็อกโกแลตกับช็อตกาแฟร้อน", "เติมนมสตรีมร้อนคนให้เข้ากัน"] },
+                    { id: "moc_cold", name: "มอคค่าเย็น", type: "cold", color: "#4a3022", desc: "มอคค่าเย็นเข้มข้นสะใจสายช็อค", recipe: { water: 0, milk: 120, main: 60, sweet: 30 }, steps: ["ผสมซอสช็อกโกแลต นมสด และไซรัป", "เทใส่น้ำแข็งแล้วราดช็อตเอสเพรสโซ่"] },
+                    { id: "old_boran", name: "กาแฟโบราณเย็น", type: "cold", color: "#2d1300", desc: "กาแฟถุงกระดาษสูตรดั้งเดิม หอมเข้ม", recipe: { water: 120, milk: 60, main: 40, sweet: 45 }, steps: ["ชงผงกาแฟโบราณกับน้ำร้อนกรองกากออก", "ผสมนมข้นหวานและนมข้นจืดคนให้เข้ากัน"] },
+                    { id: "old_oliang", name: "โอเลี้ยง", type: "cold", color: "#1a0b00", desc: "กาแฟดำโบราณใส่น้ำตาล หอมหวานชื่นใจ", recipe: { water: 150, milk: 0, main: 40, sweet: 45 }, steps: ["ชงผงโอเลี้ยงกับน้ำร้อน", "เติมน้ำตาลทรายคนให้ละลายเทใส่น้ำแข็ง"] },
+                    { id: "old_yoklor", name: "โอเลี้ยงยกล้อ", type: "cold", color: "#3e1f00", desc: "โอเลี้ยงราดนมข้นจืดมันๆ ด้านบน", recipe: { water: 120, milk: 45, main: 40, sweet: 45 }, steps: ["ชงโอเลี้ยงใส่น้ำตาลเทใส่น้ำแข็ง", "ราดนมข้นจืดลอยหน้าด้านบนเป็นวงล้อ"] },
+                    { id: "nes_cold", name: "เนสกาแฟเย็น", type: "cold", color: "#a0522d", desc: "เนสกาแฟละมุนลิ้น รสชาติคุ้นเคย", recipe: { water: 50, milk: 90, main: 15, sweet: 40 }, steps: ["ละลายผงกาแฟสำเร็จรูปกับน้ำร้อนและนมข้น", "เติมนมสดและน้ำแข็งคนให้เข้ากัน"] },
+                    { id: "fruit_orange", name: "กาแฟน้ำส้ม", type: "cold", color: "#d35400", desc: "กาแฟสดชื่นตัดด้วยน้ำส้มแท้เปรี้ยวหวาน", recipe: { water: 120, milk: 0, main: 60, sweet: 15 }, steps: ["เทน้ำส้มคั้นสดใส่น้ำแข็งเต็มแก้ว", "ค่อยๆ เทช็อตเอสเพรสโซ่ราดด้านบน"] },
+                    { id: "fruit_coco", name: "กาแฟน้ำมะพร้าว", type: "cold", color: "#d2b48c", desc: "กาแฟหอมกลิ่นน้ำมะพร้าวธรรมชาติ", recipe: { water: 120, milk: 0, main: 60, sweet: 0 }, steps: ["รินน้ำมะพร้าวสดใส่น้ำแข็ง", "ราดช็อตเอสเพรสโซ่ทับเพื่อความหอมสดชื่น"] }
+                ]
+            },
+            tea: {
+                title: "🍵 ชา",
+                mainLabel: "🌿 น้ำชาสกัด / ผงชา (ml/g)",
+                items: [
+                    { id: "thai_tea", name: "ชาไทยเย็น", type: "cold", color: "#e67e22", desc: "ชาไทยสีส้มเข้มข้น หอมมันสะใจ", recipe: { water: 0, milk: 90, main: 120, sweet: 40 }, steps: ["แช่ผงชาไทยในน้ำร้อนแล้วกรองเอาแต่น้ำชา", "ผสมนมข้นหวานและนมข้นจืดคนให้เข้ากัน", "เทใส่น้ำแข็งเต็มแก้ว"] },
+                    { id: "taiwan_boba", name: "ชานมไต้หวันบราวน์ชูการ์", type: "cold", color: "#cdb4db", desc: "ชานมไต้หวันหอมกลิ่นชาดำและไข่มุก", recipe: { water: 0, milk: 120, main: 100, sweet: 30 }, steps: ["ต้มไข่มุกในน้ำเชื่อมบราวน์ชูการ์", "ชงชาดำผสมครีมเทียมและนมสด", "เทใส่แก้วที่มีไข่มุกเตรียมไว้"] },
+                    { id: "matcha_latte", name: "ชาเขียวมัทฉะลาเต้", type: "cold", color: "#7cb342", desc: "มัทฉะแท้เข้มข้น นมสดนุ่มนวล", recipe: { water: 30, milk: 150, main: 15, sweet: 20 }, steps: ["ตีผงมัทฉะกับน้ำอุ่นให้ละลายเนียน", "เทนมสดและไซรัปใส่น้ำแข็ง", "ราดมัทฉะเข้มข้นทับด้านบน"] },
+                    { id: "lemon_tea", name: "ชามะนาว", type: "cold", color: "#f39c12", desc: "ชามะนาวเปรี้ยวหวาน ชื่นใจคลายร้อน", recipe: { water: 50, milk: 0, main: 120, sweet: 45 }, steps: ["ชงชาดำเข้มข้นเติมน้ำตาลทรายคนให้ละลาย", "ใส่น้ำมะนาวคั้นสดคนให้เข้ากันเทใส่น้ำแข็ง"] },
+                    { id: "black_tea", name: "ชาดำเย็น", type: "cold", color: "#8e44ad", desc: "ชาดำเย็นโบราณ หอมกลิ่นชาแท้", recipe: { water: 50, milk: 0, main: 150, sweet: 30 }, steps: ["ชงน้ำชาดำผสมน้ำตาลทราย", "เทใส่น้ำแข็งเย็นเจี๊ยบ"] },
+                    { id: "oolong", name: "ชาอู่หลง / เอิร์ลเกรย์", type: "cold", color: "#c0392b", desc: "ชาพรีเมียมหอมกลิ่นดอกไม้และสมุนไพร", recipe: { water: 50, milk: 0, main: 150, sweet: 15 }, steps: ["แช่ใบชาอู่หลงในน้ำร้อน", "เติมความหวานเล็กน้อยเทใส่น้ำแข็ง"] }
+                ]
+            },
+            milk: {
+                title: "🥛 นม/โกโก้",
+                mainLabel: "🍫 ผงโกโก้/ส่วนผสม (g)",
+                items: [
+                    { id: "cocoa_cold", name: "โกโก้เย็น", type: "cold", color: "#3e2723", desc: "โกโก้เข้มข้น หอมหวานมันกลมกล่อม", recipe: { water: 50, milk: 120, main: 25, sweet: 30 }, steps: ["ละลายผงโกโก้กับน้ำร้อนและนมข้นหวาน", "เติมนมสดคนให้เข้ากันเทใส่น้ำแข็ง"] },
+                    { id: "cocoa_milk", name: "โกโก้นมสด", type: "cold", color: "#4e342e", desc: "โกโก้นมสดละมุนลิ้น ดื่มเพลิน", recipe: { water: 30, milk: 150, main: 20, sweet: 20 }, steps: ["ผสมผงโกโก้น้อยๆ กับน้ำร้อน", "เทนมสดเย็นราดด้านบนให้เกิดเลเยอร์"] },
+                    { id: "pink_milk", name: "นมชมพู (Pink Milk)", type: "cold", color: "#ff9ff3", desc: "นมนมเฮลซ์บลูบอยหวานหอมวัยเด็ก", recipe: { water: 0, milk: 150, main: 0, sweet: 40 }, steps: ["ผสมน้ำหวานเฮลซ์บลูบอยกลิ่นสตรอว์เบอร์รีกับนมสด", "คนให้เข้ากันเทใส่น้ำแข็ง"] },
+                    { id: "straw_milk", name: "นมสดสตรอว์เบอร์รี", type: "cold", color: "#ffcccc", desc: "นมสดผสมเนื้อสตรอว์เบอร์รีเคี้ยวหนึบ", recipe: { water: 0, milk: 150, main: 40, sweet: 15 }, steps: ["ตักแยมสตรอว์เบอร์รีใส่ก้นแก้ว", "เทนมสดเย็นและน้ำแข็งทับ"] },
+                    { id: "milo", name: "ไมโล / โอวัลตินภูเขาไฟ", type: "cold", color: "#5d4037", desc: "เครื่องดื่มมอลต์เข้มข้นโรยผงแน่นๆ", recipe: { water: 50, milk: 100, main: 30, sweet: 25 }, steps: ["ชงผงไมโลกับน้ำร้อนและนมข้น", "เทใส่น้ำแข็งแล้วพูนผงไมโลด้านบนสุดยอด"] },
+                    { id: "grassjelly", name: "เฉาก๊วยนมสด", type: "cold", color: "#dcdde1", desc: "นมสดหอมมันเคียงเฉาก๊วยหนึบหนับ", recipe: { water: 0, milk: 150, main: 50, sweet: 20 }, steps: ["หั่นเฉาก๊วยใส่แก้วเติมนมสดและน้ำเชื่อม", "ใส่น้ำแข็งพร้อมทาน"] },
+                    { id: "bear_milk", name: "นมหมีปั่น", type: "frappe", color: "#f5f6fa", desc: "นมหมีกระป๋องปั่นเนียนนุ่ม หอมมัน", recipe: { water: 0, milk: 140, main: 0, sweet: 40 }, steps: ["เทนมหมีกระป๋อง นมข้น และน้ำแข็งลงเครื่องปั่น", "ปั่นจนเนียนละเอียดเสิร์ฟในแก้วโดม"] }
+                ]
+            },
+            smoothie: {
+                title: "🍓 ผลไม้ปั่น",
+                mainLabel: "🍎 เนื้อผลไม้/โยเกิร์ต (g)",
+                items: [
+                    { id: "straw_yogurt", name: "สตรอว์เบอร์รีโยเกิร์ตปั่น", type: "frappe", color: "#ff7979", desc: "โยเกิร์ตเปรี้ยวหวานผสานสตรอว์เบอร์รี", recipe: { water: 0, milk: 60, main: 100, sweet: 30 }, steps: ["ใส่โยเกิร์ต สตรอว์เบอร์รีแช่แข็ง และน้ำเชื่อมลงโถ", "ปั่นจนเนียนนุ่มละมุน"] },
+                    { id: "mango", name: "มะม่วงปั่น", type: "frappe", color: "#f6e58d", desc: "เนื้อมะม่วงสุกปั่นหวานฉ่ำสดชื่น", recipe: { water: 50, milk: 0, main: 120, sweet: 25 }, steps: ["ปั่นเนื้อมะม่วงสุกกับน้ำแข็งและน้ำเชื่อมเล็กน้อย"] },
+                    { id: "watermelon", name: "แตงโมปั่น", type: "frappe", color: "#eb4d4b", desc: "แตงโมสดปั่นเย็นฉ่ำดับร้อนได้ดีเยี่ยม", recipe: { water: 0, milk: 0, main: 150, sweet: 20 }, steps: ["ปั่นเนื้อแตงโมไร้เมล็ดกับน้ำแข็งจนฟูสดชื่น"] },
+                    { id: "coco_milk", name: "มะพร้าวปั่นนมสด", type: "frappe", color: "#f1f2f6", desc: "เนื้อมะพร้าวอ่อนปั่นกับนมสดหอมมัน", recipe: { water: 0, milk: 90, main: 100, sweet: 30 }, steps: ["ปั่นเนื้อมะพร้าวอ่อน น้ำมะพร้าว และนมสดรวมกัน"] },
+                    { id: "banana_oreo", name: "กล้วยหอมโอรีโอ้ปั่น", type: "frappe", color: "#574b90", desc: "กล้วยหอมและโอรีโอ้ปั่นเข้มข้นเข้ากันสุดๆ", recipe: { water: 0, milk: 120, main: 100, sweet: 20 }, steps: ["ปั่นกล้วยหอม นมสด และคุกกี้โอรีโอ้จนเนียนละเอียด"] }
+                ]
+            },
+            soda: {
+                title: "🥤 โซดา/สมุนไพร",
+                mainLabel: "🌿 น้ำสมุนไพร/ไซรัป (ml)",
+                items: [
+                    { id: "blue_hawaii", name: "บลูฮาวายโซดา", type: "cold", color: "#00a8ff", desc: "โซดาซ่าสะใจ สีฟ้าสดใสซัมเมอร์", recipe: { water: 150, milk: 0, main: 40, sweet: 0 }, steps: ["เทไซรัปบลูฮาวายก้นแก้วใส่น้ำแข็ง", "ค่อยๆ รินน้ำโซดาซ่าซ่าทับด้านบน"] },
+                    { id: "red_soda", name: "แดงโซดา", type: "cold", color: "#e84118", desc: "เฮลซ์บลูบอยแดงโซดาซ่าหวานชื่นใจ", recipe: { water: 150, milk: 0, main: 40, sweet: 0 }, steps: ["ผสมน้ำแดงเฮลซ์บลูบอยกับน้ำโซดาเย็นจัด"] },
+                    { id: "herbal_roselle", name: "น้ำกระเจี๊ยบ", type: "cold", color: "#c23616", desc: "น้ำกระเจี๊ยบเปรี้ยวหวานแก้กระหาย", recipe: { water: 150, milk: 0, main: 50, sweet: 30 }, steps: ["ต้มดอกกระเจี๊ยบกรองกากปรุงน้ำตาลเกลือเล็กน้อย"] },
+                    { id: "herbal_chry", name: "น้ำเก๊กฮวย", type: "cold", color: "#fbc531", desc: "น้ำเก๊กฮวยหอมดอกไม้ สรรพคุณขับร้อน", recipe: { water: 150, milk: 0, main: 50, sweet: 30 }, steps: ["ต้มดอกเก๊กฮวยหอมๆ ใส่น้ำตาลกรวด"] },
+                    { id: "herbal_pandan", name: "น้ำใบเตย / ตะไคร้", type: "cold", color: "#44bd32", desc: "น้ำใบเตยหอมละมุนชื่นใจ", recipe: { water: 150, milk: 0, main: 50, sweet: 25 }, steps: ["ต้มใบเตยคั้นสดปรุงหวานพอดีดื่มเย็นๆ"] },
+                    { id: "herbal_bael", name: "น้ำมะตูม", type: "cold", color: "#e1b12c", desc: "น้ำมะตูมย่างหอมกรุ่น บำรุงธาตุ", recipe: { water: 150, milk: 0, main: 50, sweet: 25 }, steps: ["ต้มเนื้อมะตูมแห้งย่างไฟใส่น้ำตาล"] }
+                ]
+            }
+        };
+
+        let currentCatKey = 'coffee';
+        let currentItem = categoriesData.coffee.items[0];
+        let currentRecipeResult = {};
+
+        function setTheme(themeName) {
+            document.documentElement.setAttribute('data-theme', themeName);
+            if (themeName === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+            updateCalculation();
+        }
+
+        function initApp() {
+            try { if (matchMedia('(prefers-color-scheme: dark)').matches) { document.documentElement.setAttribute('data-theme', 'dark'); document.documentElement.classList.add('dark'); } } catch (e) {}
+            renderCategoryTabs();
+            selectCategory('coffee');
+        }
+
+        function renderCategoryTabs() {
+            const container = document.getElementById('categoryTabsContainer');
+            container.innerHTML = '';
+            Object.keys(categoriesData).forEach(catKey => {
+                const cat = categoriesData[catKey];
+                const btn = document.createElement('button');
+                const isSelected = catKey === currentCatKey;
+                btn.className = 'tab py-2.5 px-2 font-cute font-semibold text-xs md:text-sm flex items-center justify-center' + (isSelected ? ' tab-on' : '');
+                btn.innerHTML = `<span>${cat.title}</span>`;
+                btn.onclick = () => selectCategory(catKey);
+                container.appendChild(btn);
+            });
+        }
+
+        function selectCategory(catKey) {
+            currentCatKey = catKey;
+            renderCategoryTabs();
+
+            const cat = categoriesData[catKey];
+            document.getElementById('label-main').innerHTML = `<i class="fa-solid fa-seedling text-emerald-600 mr-2 w-5"></i> ${cat.mainLabel}`;
+
+            const dropdown = document.getElementById('menuSelectDropdown');
+            dropdown.innerHTML = '';
+            cat.items.forEach(item => {
+                const opt = document.createElement('option');
+                opt.value = item.id;
+                opt.innerText = item.name;
+                dropdown.appendChild(opt);
+            });
+
+            currentItem = cat.items[0];
+            dropdown.value = currentItem.id;
+            applyRecipeToSliders(currentItem);
+            updateCalculation();
+        }
+
+        function onMenuSelectChange() {
+            const selectedId = document.getElementById('menuSelectDropdown').value;
+            const cat = categoriesData[currentCatKey];
+            currentItem = cat.items.find(i => i.id === selectedId);
+            applyRecipeToSliders(currentItem);
+            updateCalculation();
+        }
+
+        function applyRecipeToSliders(item) {
+            document.getElementById('slide-water').value = item.recipe.water;
+            document.getElementById('slide-milk').value = item.recipe.milk;
+            document.getElementById('slide-main').value = item.recipe.main;
+            document.getElementById('slide-sweet').value = item.recipe.sweet;
+        }
+
+        function onSliderInput() {
+            updateCalculation();
+        }
+
+        function paintSliders() {
+            ['water','milk','main','sweet'].forEach(k => { const e = document.getElementById('slide-' + k); e.style.setProperty('--pct', ((e.value - e.min) / (e.max - e.min) * 100) + '%'); });
+        }
+
+        function updateCalculation() {
+            paintSliders(); syncReset();
+            const water = parseInt(document.getElementById('slide-water').value);
+            const milk = parseInt(document.getElementById('slide-milk').value);
+            const main = parseInt(document.getElementById('slide-main').value);
+            const sweet = parseInt(document.getElementById('slide-sweet').value);
+
+            document.getElementById('val-water').innerText = water + ' มล.';
+            document.getElementById('val-milk').innerText = milk + ' มล.';
+            document.getElementById('val-main').innerText = main + (currentCatKey === 'coffee' && main > 20 ? ' มล.' : ' กรัม/มล.');
+            document.getElementById('val-sweet').innerText = sweet + ' มล.';
+
+            document.getElementById('active-menu-badge').innerText = currentItem.name;
+            document.getElementById('display-drink-name').innerText = currentItem.name;
+            document.getElementById('display-drink-desc').innerText = currentItem.desc;
+
+            const typeTexts = { hot: '✨ เมนูร้อน', cold: '🧊 เมนูเย็น', frappe: '🥤 เมนูปั่น' };
+            const typeIcons = { hot: 'fa-mug-hot', cold: 'fa-glass-water', frappe: 'fa-blender' };
+            document.getElementById('drink-type-badge').innerText = typeTexts[currentItem.type];
+            document.getElementById('drink-icon-box').innerHTML = `<i class="fa-solid ${typeIcons[currentItem.type]}"></i>`;
+
+            document.getElementById('svg-illustration-container').innerHTML = generateSvgIllustration(currentItem.type, currentItem.color, water, milk, main, sweet, null, currentCatKey);
+
+            // Smart Warning System
+            checkSmartWarnings(water, milk, main, sweet);
+
+            currentRecipeResult = {
+                name: currentItem.name,
+                icon: typeIcons[currentItem.type],
+                ingredients: [
+                    water > 0 ? `น้ำเปล่า/โซดา: ${water} มล.` : '',
+                    milk > 0 ? `นมสด/นมข้น: ${milk} มล.` : '',
+                    main > 0 ? `ส่วนผสมหลัก: ${main} กรัม/มล.` : '',
+                    sweet > 0 ? `ความหวาน (ไซรัป/นมข้น): ${sweet} มล.` : 'หวานน้อย/ไม่หวาน'
+                ].filter(Boolean),
+                steps: currentItem.steps
+            };
+
+            const breakdown = document.getElementById('ingredient-breakdown-list');
+            breakdown.innerHTML = '';
+            currentRecipeResult.ingredients.forEach(ing => {
+                const li = document.createElement('li');
+                li.className = 'flex items-center space-x-2';
+                li.innerHTML = `<i class="fa-solid fa-check text-xs" style="color: var(--primary);"></i> <span>${ing}</span>`;
+                breakdown.appendChild(li);
+            });
+        }
+
+        function checkSmartWarnings(water, milk, main, sweet) {
+            let msg = "";
+            const box = document.getElementById('warning-box');
+
+            let totalSugar = sweet;
+            if (currentCatKey === 'soda' || currentCatKey === 'smoothie') totalSugar += (main / 2);
+
+            if (totalSugar > 45) {
+                msg = "⚠️ <b>คำเตือนสุขภาพ (WHO):</b> ระดับน้ำตาลสูงเกิน 24 กรัม/วัน เสี่ยงต่อโรคอ้วนและเบาหวานเมื่อบริโภคเป็นประจำ";
+            } else if (sweet === 0 && currentItem.type === 'frappe') {
+                msg = "💡 <b>คำแนะนำรสชาติ:</b> เมนูปั่นหากไม่ใส่ความหวานเลย น้ำแข็งจะจับตัวแข็งและรสชาติจืดชืด แนะนำให้ใส่ไซรัปเพิ่มเล็กน้อย";
+            } else if (currentCatKey === 'coffee' && main > 60) {
+                msg = "⚠️ <b>คำเตือนคาเฟอีน:</b> ปริมาณกาแฟเข้มข้นมาก อาจทำให้ใจสั่นหรือนอนไม่หลับสำหรับผู้ที่แพ้ง่าย";
+            } else if (milk > 180) {
+                msg = "⚠️ <b>คำเตือนโภชนาการ:</b> ปริมาณนมหรือไขมันสูง อาจให้พลังงานและแคลอรี่สูงมากในแก้วเดียว";
+            }
+
+            if (msg !== "") {
+                box.innerHTML = msg;
+                box.classList.remove('hidden');
+            } else {
+                box.classList.add('hidden');
+            }
+        }
+
+        let cupUid = 0;
+        function generateSvgIllustration(type, color, water, milk, main, sweet, acc, cat) {
+            const segs = [[sweet, '#F2A33A'], [milk, '#FFF4E0'], [main, color], [water, '#BFE3F2']].filter(x => x[0] > 0);
+            const sum = segs.reduce((a, x) => a + x[0], 0), cap = Math.max(sum, 150) * 1.1;
+            const hot = type === 'hot', top = hot ? 64 : 44, bot = hot ? 162 : 206, H = bot - top, id = 'cc' + (++cupUid);
+            let y = bot, layers = '';
+            segs.forEach(([v, c]) => { const h = v / cap * H; y -= h; layers += `<rect x="0" y="${y.toFixed(1)}" width="200" height="${h.toFixed(1)}" fill="${c}"/>`; });
+            const shape = hot ? 'M46 64 H142 V146 Q142 162 126 162 H62 Q46 162 46 146 Z' : 'M50 44 L63 198 Q64 206 73 206 H127 Q136 206 137 198 L150 44 Z';
+            const st = 'stroke="var(--outline)" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"';
+            const fx = hot ? 94 : 100, fy = hot ? 114 : 128, ey = fy - 10;
+            const buzz = cat === 'coffee' && main > 60, happy = sweet >= 40, special = acc != null;
+            const eye = x => buzz
+                ? `<g class="eye"><circle cx="${x}" cy="${ey}" r="9" fill="#fff" ${st} stroke-width="3"/><circle cx="${x}" cy="${ey}" r="2.5" fill="var(--outline)"/></g>`
+                : happy
+                ? `<path d="M${x - 8} ${ey + 3} q8 -11 16 0" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round"/><path d="M${x - 8} ${ey + 3} q8 -11 16 0" fill="none" ${st}/>`
+                : `<g class="eye"><circle cx="${x}" cy="${ey}" r="7" fill="#fff" ${st} stroke-width="3"/><circle cx="${x + 1}" cy="${ey + 1}" r="3.2" fill="var(--outline)"/></g>`;
+            const mouth = buzz
+                ? `<ellipse cx="${fx}" cy="${fy + 10}" rx="6" ry="8" fill="#fff" ${st} stroke-width="3"/>`
+                : `<path d="M${fx - 11} ${fy + 4} Q${fx} ${fy + (happy ? 24 : 18)} ${fx + 11} ${fy + 4} Z" fill="#fff" ${st} stroke-width="3"/>`;
+            const blush = [fx - 30, fx + 30].map(x => `<ellipse cx="${x}" cy="${fy + 4}" rx="7" ry="4.5" fill="#FF8FA3" opacity="${happy ? .95 : .55}"/>`).join('');
+            const sp = (x, yy, d) => `<path class="spk" style="animation-delay:${d}s" d="M${x} ${yy - 8} l2.5 5.5 l5.5 2.5 l-5.5 2.5 l-2.5 5.5 l-2.5 -5.5 l-5.5 -2.5 l5.5 -2.5z" fill="#FFD166" ${st} stroke-width="1.5"/>`;
+            const sparkles = (happy || special) ? sp(34, 90, 0) + sp(168, 70, .6) + sp(160, 150, 1.2) : '';
+            const straw = '<path class="wig" d="M118 10 L100 190" fill="none" stroke="var(--primary)" stroke-width="6" stroke-linecap="round"/>';
+            const bub = [[80, 0], [112, 1], [96, 2]].map(([x, d]) => `<circle class="bub" cx="${x}" cy="${bot - 16}" r="4" fill="#fff" fill-opacity=".6" style="animation-delay:${d}s"/>`).join('');
+            let inner = '', extra;
+            if (hot) extra = `<path d="M142 84 H152 A17 17 0 0 1 152 122 H142" fill="none" ${st}/><path d="M34 172 H154" fill="none" ${st}/>` + [[72, 0], [94, .8], [116, 1.6]].map(([x, d]) => `<path class="steam" style="animation-delay:${d}s" d="M${x} 52 q-7 -8 0 -16" fill="none" stroke="var(--muted)" stroke-width="4" stroke-linecap="round"/>`).join('');
+            else if (type === 'cold') { inner = bub; extra = `<rect class="ice" x="68" y="${(y - 8).toFixed(1)}" width="24" height="24" rx="5" fill="#fff" fill-opacity=".75" ${st} stroke-width="2.5"/><rect class="ice" style="animation-delay:.9s" x="104" y="${(y - 4).toFixed(1)}" width="22" height="22" rx="5" fill="#fff" fill-opacity=".75" ${st} stroke-width="2.5"/>${straw}<ellipse cx="80" cy="210" rx="10" ry="5" fill="var(--outline)"/><ellipse cx="120" cy="210" rx="10" ry="5" fill="var(--outline)"/>`; }
+            else { inner = bub; extra = `${straw}<g class="wig"><path d="M54 46 Q58 22 100 24 Q142 22 146 46 Z" fill="#fff" ${st}/><circle cx="100" cy="18" r="7" fill="#E63946" ${st} stroke-width="3"/></g><ellipse cx="80" cy="210" rx="10" ry="5" fill="var(--outline)"/><ellipse cx="120" cy="210" rx="10" ry="5" fill="var(--outline)"/>`; }
+            const ay = type === 'frappe' ? 14 : top;
+            const accs = [
+                `<path d="M${fx - 24} ${ay} l-4 -24 l16 10 l12 -20 l12 20 l16 -10 l-4 24 z" fill="#FFD166" ${st} stroke-width="3"/>`,
+                `<path d="M${fx - 18} ${ay} L${fx} ${ay - 44} L${fx + 18} ${ay} Z" fill="#B794F6" ${st} stroke-width="3"/><circle cx="${fx}" cy="${ay - 46}" r="5" fill="#FFD166" ${st} stroke-width="2.5"/>`,
+                `<path d="M${fx - 30} ${ay - 6} l-18 -11 v22 z M${fx - 30} ${ay - 6} l18 -11 v22 z" fill="#FF7A93" ${st} stroke-width="3"/><circle cx="${fx - 30}" cy="${ay - 6}" r="5" fill="#FF7A93" ${st} stroke-width="3"/>`,
+                `<rect x="${fx - 28}" y="${ey - 9}" width="24" height="16" rx="6" fill="#222" ${st} stroke-width="2.5"/><rect x="${fx + 4}" y="${ey - 9}" width="24" height="16" rx="6" fill="#222" ${st} stroke-width="2.5"/><path d="M${fx - 4} ${ey - 2} h8" fill="none" ${st} stroke-width="3"/>`,
+                `<ellipse cx="${fx}" cy="${ay - 14}" rx="26" ry="8" fill="none" stroke="#FFD166" stroke-width="5"/>`
+            ];
+            return `<svg viewBox="0 -36 200 270" class="cup-svg cup-pop h-full w-auto" role="img" aria-label="ตัวการ์ตูนแก้วเครื่องดื่ม"><defs><clipPath id="${id}"><path d="${shape}"/></clipPath></defs><g class="cb${buzz ? ' buzz' : ''}"><g clip-path="url(#${id})"><rect x="0" y="0" width="200" height="240" fill="var(--bg-card)" fill-opacity=".6"/>${layers}${inner}</g><path d="${shape}" fill="none" ${st}/>${extra}${blush}${eye(fx - 17)}${eye(fx + 17)}${mouth}${special ? accs[acc % 5] : ''}${sparkles}</g></svg>`;
+        }
+
+        function curVals() { return { water: +document.getElementById('slide-water').value, milk: +document.getElementById('slide-milk').value, main: +document.getElementById('slide-main').value, sweet: +document.getElementById('slide-sweet').value }; }
+        function syncReset() {
+            const v = curVals(), d = currentItem.recipe;
+            document.getElementById('orig-line').textContent = 'ค่าเดิมของเมนู: น้ำ ' + d.water + ', นม ' + d.milk + ', ส่วนผสมหลัก ' + d.main + ', ความหวาน ' + d.sweet;
+            document.getElementById('btn-reset').classList.toggle('tab-on', v.water !== d.water || v.milk !== d.milk || v.main !== d.main || v.sweet !== d.sweet);
+        }
+        function resetRecipe() {
+            const i = document.getElementById('reset-ico'); i.classList.remove('spin-once'); void i.offsetWidth; i.classList.add('spin-once');
+            applyRecipeToSliders(currentItem); updateCalculation();
+        }
+        function showView(v) {
+            document.getElementById('view-calc').classList.toggle('hidden', v !== 'calc');
+            document.getElementById('view-saved').classList.toggle('hidden', v !== 'saved');
+            ['calc', 'saved'].forEach(k => document.getElementById('tabbtn-' + k).classList.toggle('tab-on', k === v));
+            if (v === 'saved') renderSaved();
+        }
+
+        const SAVE_KEY = 'cozy_saved_v1';
+        let saved = [];
+        try { saved = JSON.parse(localStorage.getItem(SAVE_KEY) || '[]') || []; } catch (e) { saved = []; }
+        function persist() { try { localStorage.setItem(SAVE_KEY, JSON.stringify(saved)); } catch (e) {} }
+        function esc(t) { return String(t).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+        function saveCurrent() {
+            const nameEl = document.getElementById('save-name');
+            saved.unshift(Object.assign({ id: Date.now(), name: (nameEl.value.trim() || currentItem.name + ' สูตรของฉัน').slice(0, 40), cat: currentCatKey, itemId: currentItem.id, type: currentItem.type, color: currentItem.color, menu: currentItem.name, acc: Math.floor(Math.random() * 5) }, curVals()));
+            persist(); nameEl.value = ''; renderSaved();
+            const m = document.getElementById('save-msg'); m.textContent = 'บันทึกสูตรแล้ว ดูได้ที่แท็บ "สูตรที่บันทึกไว้"';
+            setTimeout(() => { m.textContent = ''; }, 3500);
+        }
+        function renderSaved() {
+            document.getElementById('saved-count').textContent = saved.length;
+            const box = document.getElementById('saved-list');
+            if (!saved.length) { box.innerHTML = '<div class="dynamic-card p-6 text-center sm:col-span-2 md:col-span-3"><p class="font-cute text-lg font-bold">ยังไม่มีสูตรที่บันทึกไว้</p><p class="text-sm mt-1">ปรับสัดส่วนในแท็บคำนวณสูตร แล้วกด บันทึกสูตร ตัวการ์ตูนแก้วพิเศษของสูตรนั้นจะมาอยู่ที่นี่</p></div>'; return; }
+            box.innerHTML = saved.map(r => `<article class="dynamic-card p-4 flex flex-col items-center text-center gap-2"><div class="h-48 w-full flex items-center justify-center rounded-2xl" style="background:var(--soft)">${generateSvgIllustration(r.type, r.color, r.water, r.milk, r.main, r.sweet, r.acc, r.cat)}</div><h3 class="font-cute text-lg font-bold">${esc(r.name)}</h3><p class="text-xs">${esc(r.menu)}</p><p class="text-xs font-medium">น้ำ ${r.water}, นม ${r.milk}, หลัก ${r.main}, หวาน ${r.sweet}</p><div class="flex gap-2 w-full"><button onclick="loadSaved(${r.id})" class="tab flex-1 py-2 text-sm font-cute font-semibold">โหลดไปปรับ</button><button onclick="deleteSaved(${r.id}, this)" class="tab flex-1 py-2 text-sm font-cute font-semibold">ลบ</button></div></article>`).join('');
+        }
+        function loadSaved(id) {
+            const r = saved.find(x => x.id === id); if (!r) return;
+            selectCategory(r.cat);
+            currentItem = categoriesData[r.cat].items.find(i => i.id === r.itemId) || currentItem;
+            document.getElementById('menuSelectDropdown').value = currentItem.id;
+            ['water', 'milk', 'main', 'sweet'].forEach(k => { document.getElementById('slide-' + k).value = r[k]; });
+            updateCalculation(); showView('calc'); window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        function deleteSaved(id, btn) {
+            if (!btn.dataset.sure) { btn.dataset.sure = 1; btn.textContent = 'กดอีกครั้งเพื่อลบ'; setTimeout(() => { delete btn.dataset.sure; btn.textContent = 'ลบ'; }, 2500); return; }
+            saved = saved.filter(x => x.id !== id); persist(); renderSaved();
+        }
+
+        function openGuideModal() {
+            document.getElementById('modal-title').innerText = currentRecipeResult.name;
+            document.getElementById('modal-icon').innerHTML = `<i class="fa-solid ${currentRecipeResult.icon}"></i>`;
+            document.getElementById('modal-summary-proportions').innerText = currentRecipeResult.ingredients.join(' • ');
+
+            const stepsList = document.getElementById('modal-steps');
+            stepsList.innerHTML = '';
+            currentRecipeResult.steps.forEach((step, idx) => {
+                const li = document.createElement('li');
+                li.className = 'flex items-start space-x-3 bg-stone-50 dark:bg-zinc-800 p-3 rounded-xl border border-stone-100 dark:border-zinc-700';
+                li.innerHTML = `<span class="flex-shrink-0 w-6 h-6 rounded-full text-white text-xs font-cute flex items-center justify-center font-bold" style="background-color: var(--primary);">${idx + 1}</span><span class="text-xs md:text-sm leading-relaxed">${step}</span>`;
+                stepsList.appendChild(li);
+            });
+            document.getElementById('guide-modal').classList.remove('hidden');
+        }
+
+        function closeGuideModal() {
+            document.getElementById('guide-modal').classList.add('hidden');
+        }
+
+        window.onload = function () { initApp(); renderSaved(); };
+    </script>
+</body>
+</html>
